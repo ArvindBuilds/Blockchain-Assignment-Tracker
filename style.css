@@ -1,0 +1,106 @@
+body {
+    display: flex;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: #f4f7f6;
+}
+
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: #2c3e50;
+    color: white;
+    padding: 20px;
+}
+
+.sidebar ul { list-style: none; padding: 0; }
+.sidebar li {
+    padding: 15px;
+    cursor: pointer;
+    border-bottom: 1px solid #34495e;
+}
+
+.sidebar li:hover { background: #34495e; }
+
+.content { flex-grow: 1; padding: 40px; }
+
+.question-card {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.option-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    background: white;
+    cursor: pointer;
+    text-align: left;
+    transition: 0.3s;
+}
+
+.correct { background-color: #2ecc71 !important; color: white; }
+.wrong { background-color: #e74c3c !important; color: white; }
+/* Disable button visual feedback after selection */
+.option-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+/* Explanation box styling to match your theme */
+.explanation-box {
+    margin-top: 15px;
+    padding: 12px;
+    background-color: #e8f4fd;
+    border-left: 4px solid #3498db;
+    border-radius: 4px;
+    font-size: 0.9em;
+    color: #2c3e50;
+}
+
+/* Animation for the question cards */
+.question-card {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    body { flex-direction: column; }
+    .sidebar { width: 100%; height: auto; padding: 10px; }
+    .sidebar ul { display: flex; overflow-x: auto; white-space: nowrap; }
+    .sidebar li { border-bottom: none; border-right: 1px solid #34495e; }
+}
+
+/* Scoreboard Style */
+.scoreboard {
+    position: sticky;
+    top: 0;
+    background: #27ae60;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 100;
+}
+
+.explanation-box {
+    margin-top: 15px;
+    padding: 12px;
+    background-color: #e8f4fd;
+    border-left: 4px solid #3498db;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
